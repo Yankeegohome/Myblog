@@ -1,0 +1,9 @@
+<div class="{{menu_class}}">
+    <ul>
+        {% for tag in tags %}
+            <li><a href="{{ tag.get_absolute_url }}">
+                {{tag.title}}
+            </a></li>
+        {% endfor %}
+    </ul>
+</div>
