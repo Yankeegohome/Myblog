@@ -1,0 +1,25 @@
+{% load static %}
+<div class="{{ menu_class }}">
+    {% for post in posts %}
+    <div class="item">
+        {% if post.photo %}
+            <a href="{{post.get_absolute_url}}"><img src="{{ post.photo.url }}" alt="{{ post.title }}"></a>
+                {% else %}
+                    <a href="{{post.get_absolute_url}}"><img src="{% static 'assets/images/banner-item-01.jpg' %}" height="450" width="350" alt=""></a>
+                {% endif %}
+            <div class="item-content">
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>{{ post.category }}</span>
+                </div>
+                <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
+                <ul class="post-info">
+                  <li><a href="#">{{ post.author }}</a></li>
+                  <li><a href="#">{{ post.created_at }}</a></li>
+                  <li><a href="#">Просмотры: {{ post.views }} </a></li>
+                </ul>
+              </div>
+            </div>
+    </div>
+    {% endfor %}
+</div>

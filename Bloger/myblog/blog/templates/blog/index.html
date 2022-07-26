@@ -27,7 +27,7 @@
                       <ul class="post-info">
                         <li><a href="#">{{ post.author }}</a></li>
                         <li><a href="#">{{ post.created_at }}</a></li>
-                        <li><a href="#">{{ post.views }}</a></li>
+                        <li><a href="#">Просмотры:{{ post.views }}</a></li>
                       </ul>
                        {{ post.content|truncatewords_html:30|safe }}
                       <div class="post-options">
